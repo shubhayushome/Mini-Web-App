@@ -1,0 +1,18 @@
+# React
+frontend-react/node_modules/
+frontend-react/build/
+
+# Spring Boot
+backend-springboot/app/build/
+
+# Python
+summarizer-fastapi/venv/
+__pycache__/
+
+# IntelliJ/VSCode
+*.iml
+.idea/
+.vscode/
+
+# OS
+.DS_Store

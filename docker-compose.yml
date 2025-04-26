@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: summarizer_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: paradise@108
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  fastapi:
+    build:
+      context: ./summarizer-fastapi
+    container_name: fastapi-service
+    ports:
+      - "8001:8001"
+
+  backend:
+    build:
+      context: ./backend-springboot
+    container_name: springboot-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/summarizer_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: paradise@108
+    depends_on:
+      - db
+      - fastapi
+
+  frontend:
+    build:
+      context: ./frontend-react
+    container_name: react-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
