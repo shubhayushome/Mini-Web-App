@@ -15,10 +15,8 @@ A full-stack AI-powered web application that takes in a website URL, extracts it
 
 ## 📸 Screenshots
 
-> Home Page (URL Input + Summary Preview)  
-> History Tab (Grouped by Date, Expandable Summaries)
-
-*Screenshots coming soon...*
+![Home Screen](https://github.com/shubhayushome/Mini-web-app/blob/main/Project%20ss/Screenshot%202025-04-26%20100815.png) 
+![History Screen](https://github.com/shubhayushome/Mini-web-app/blob/main/Project%20ss/Screenshot%202025-04-26%20100825.png)
 
 ---
 
